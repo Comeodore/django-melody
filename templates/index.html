@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ЖК Мелодия</title>
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+        <link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.ico' %}"/>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+	<header>
+		<div class="container">
+			<div class="wrapper">
+				<a class="logo" href="./">
+					<img src="{% static 'img/logo.svg' %}" alt="Logo">
+				</a>
+				<div class="menu">
+					<ul class="nav-menu">
+						<li>
+							<a href="">Подобрать<br> квартиру</a>
+						</li>
+						<li>
+							<a href="">Забронировать<br> квартиру</a>
+						</li>
+						<li>
+							<a href="">Ход<br> строительства</a>
+						</li>
+						<li>
+							<a href="">Проектная<br> декларация</a>
+						</li>
+					</ul>
+				</div>
+				<div class="tel">
+					<p>Закажите звонок:</p>
+					<a href="tel:+78431234567">8 (843) 123-45-67</a>
+				</div>
+			</div>
+		</div>
+	</header>
+	<main>
+		<div class="container">
+			<div class="wrapper-main">
+				<div class="home">
+					<svg width="734" height="640" viewBox="0 0 734 640" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					<rect width="734" height="640" fill="url(#pattern0)"></rect><defs>
+					<pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+					<use xlink:href="#image0" transform="translate(-0.00408719) scale(0.0013624 0.0015625)"></use>
+					</pattern>
+					<image id="image0" width="740" height="640" xlink:href="{% static 'img/home.png'%}"></image>
+					</defs>
+					<path class="default-path" d="M222 530.7L442.8 538.7L512 525V546.7L443.5 566.4L222 555.4V530.7Z" fill="#3595F6" fill-opacity="0.75"></path>
+					<path class="default-path" d="M223 529.7V504.7L443.3 508L513 504.7V524.7L443.7 537.7L223 529.7Z" fill="#3595F6" fill-opacity="0.75"></path>
+					<path class="default-path" d="M223 503.7V478.7H444H513V501.7L445 508.7L223 503.7Z" fill="#3595F6" fill-opacity="0.75"></path>
+					<path class="default-path" d="M223 479.7V454.7L444.3 451L512 457.7V479.7H444" fill="#3595F6" fill-opacity="0.75"></path>
+					<path class="default-path" d="M223 453.7V427.7L444.5 424.4L513 435.4V456.7L444 450L223 453.7Z" fill="#3595F6" fill-opacity="0.75"></path>
+					<path class="default-path" d="M222 426.7V403L443 390.7L514 413.7V435L443 422.7L222 426.7Z" fill="#3595F6" fill-opacity="0.75"></path>
+					<path class="default-path" d="M222 404.7V379.7L444.2 363.4L514 392V412.7L443.7 391L222 404.7Z" fill="#3595F6" fill-opacity="0.75"></path>
+					<path class="default-path" d="M222 379.7V354.7L444.5 334.4L514 371V391.7L442 363L222 379.7Z" fill="#3595F6" fill-opacity="0.75"></path>
+					<path class="default-path" d="M222 353.7V329.7L445 305L514 349V370.7L444.7 332.7L222 353.7Z" fill="#3595F6" fill-opacity="0.75"></path>
+					<path class="default-path" d="M222 328.7V304.7L444.5 276L514 327V347.7L443.7 305.4L222 328.7Z" fill="#3595F6" fill-opacity="0.75"></path>
+					<path class="default-path" d="M221 304.7V280.7L443.3 247.7L514 307V326.7L444 276L221 304.7Z" fill="#3595F6" fill-opacity="0.75"></path>
+					<path class="default-path" d="M222 279.7V255.7L443.2 220.7L513 284.7V305.7L444.3 247.4L222 279.7Z" fill="#3595F6" fill-opacity="0.75"></path>
+					<path class="default-path" d="M222 255.7V230.7L444.3 192.7L513 263V283.7L444 219.7L222 255.7Z" fill="#3595F6" fill-opacity="0.75"></path>
+					<path class="default-path" d="M222 229.7V204.7L442.8 161L513 240V262.7L444 189.4L222 229.7Z" fill="#3595F6" fill-opacity="0.75"></path>
+					<path class="default-path" d="M223 205.7V180.7L443 132.7L513 217.7V240.7L442.3 161.4L223 205.7Z" fill="#3595F6" fill-opacity="0.75"></path>
+					<path class="default-path" d="M222 180.7V155.7L441.8 103.7L513 196V218.7L443.3 132.4L222 180.7Z" fill="#3595F6" fill-opacity="0.75"></path>
+					<path class="default-path" d="M222 155.7V129.7L444 73L513 174.7V195.7L443.7 104L222 155.7Z" fill="#3595F6" fill-opacity="0.75"></path>
+					</svg>
+				</div>
+				<div class="choose_floor">
+					<h2>Выберите желаемый этаж</h2>
+					<button id="up">
+						<img src="{% static 'img/arrow.svg' %}" alt="arrow up">
+					</button>
+					<span class="counter">01</span>
+					<button class="down" id="down">
+						<img src="{% static 'img/arrow.svg' %}" alt="arrow down">
+					</button>
+					<a class="show-flats-btn">Смотреть квартиры на этаже</a>
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer>
+		<div class="container">
+			<div class="wrapper-footer">
+				<div class="left-content">
+					<img src="{% static 'img/icon.png' %}" alt="Icon">
+					<div class="tel">
+						<p>Закажите звонок:</p>
+						<a href="tel:+78431234567">8 (843) 123-45-67</a>
+					</div>
+					<div class="social">
+						<a href="#">
+							<img src="{% static 'img/facebook.png' %}" alt="Facebook Logo">
+						</a>
+						<a href="">
+							<img src="{% static 'img/instagram.png' %}" alt="Instagram Logo">
+						</a>
+						<a href="">
+							<img src="{% static 'img/twitter.png' %}" alt="Twitter Logo">
+						</a>
+						<a href="">
+							<img src="{% static 'img/youtube.png' %}" alt="Youtube Logo">
+						</a>
+					</div>
+				</div>
+				<div class="right-content">
+					<a href="#">Политика конфиденциальности</a>
+					<a href="#">Публичная оферта</a>
+					<a href="#">Контакты</a>
+				</div>
+			</div>
+		</div>
+	</footer>
+        <div class="choose-flats-bg"></div>
+	<div class="choose-flats animate__animated">
+		<div class="floor">
+			<div class="image-floor">
+				<h3>Этаж <span class="num-floor">{{ floor }}</span></h3>
+				<svg width="433" height="408" viewBox="0 0 433 408" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					<image id="image0" width="433" height="408" xlink:href="{% static 'img/flats.png' %}"></image>
+                    <path class="flats-path" d="M46.5 81V115.5H125V144.5H164V131H184.5V32.5H93V16H28V81H46.5Z" fill="#3595F6" fill-opacity="0.75"></path>
+                    <path class="flats-path" d="M124.729 116H46V198H167V145.178H124.729V116Z" fill="#3595F6" fill-opacity="0.75"></path>
+                    <path class="flats-path" d="M119.5 273.5H46V198H167V250.822H119.5V273.5Z" fill="#3595F6" fill-opacity="0.75"></path>
+				    <path class="flats-path" d="M121 252H166.5V309H139.5V376H95V393H30V328.5H47V273.5H121V252Z" fill="#3595F6" fill-opacity="0.75"></path>
+				    <path class="flats-path" d="M217 394.5V264H187.5V273.5H167.5V310.5H140.5V375H175.5V394.5H217Z" fill="#3595F6" fill-opacity="0.75"></path>
+				    <path class="flats-path" d="M218 394.5V264H247.5V273.5H267.5V310.5H294.5V375H259.5V394.5H218Z" fill="#3595F6" fill-opacity="0.75"></path>
+                    <path class="flats-path" d="M314 253H268.5V309H295.5V376H340V393H405V328.5H388V268.5H314V253Z" fill="#3595F6" fill-opacity="0.75"></path>
+				    <path class="flats-path" d="M314.192 252.662H268V200H367.916V204.602H388V268H314.192V252.662Z" fill="#3595F6" fill-opacity="0.75"></path>
+				    <path class="flats-path" d="M314 148.5H268V200H367.5V205H387.5V141H314V148.5Z" fill="#3595F6" fill-opacity="0.75"></path>
+                    <path class="flats-path" d="M388 81V141H314V148H267.5V131H247V32.5H338.5V16H405V81H388Z" fill="#3595F6" fill-opacity="0.75"></path>
+				</svg>
+			</div>
+			<div class="info-floor">
+				<h3>Выберите квартиру</h3>
+				<ul>
+					<li>
+						<a class="item-info-floor">
+							кв. <span class="flat-number"></span>, 2 комн. 64.5 кв. м., цена 55 тыс. $
+						</a>
+					</li>
+					<li>
+						<a class="item-info-floor">
+							кв. <span class="flat-number"></span>, 1 комн. 38.9 кв. м., цена 29 тыс. $
+						</a>
+					</li>
+					<li>
+						<a class="item-info-floor">
+							кв. <span class="flat-number"></span>, 1 комн. 35.9 кв. м., цена 27 тыс. $
+						</a>
+					</li>
+					<li>
+						<a class="item-info-floor">
+							кв. <span class="flat-number"></span>, 2 комн. 56.0 кв. м., цена 42 тыс. $
+						</a>
+					</li>
+					<li>
+						<a class="item-info-floor">
+							кв. <span class="flat-number"></span>, 1 комн. 35.8 кв. м., цена 26 тыс. $
+						</a>
+					</li>
+					<li>
+						<a class="item-info-floor">
+							кв. <span class="flat-number"></span>, 1 комн. 35.8 кв. м., цена 25 тыс. $
+						</a>
+					</li>
+					<li>
+						<a class="item-info-floor">
+							кв. <span class="flat-number"></span>, 2 комн. 58.4 кв. м., цена 45 тыс. $
+						</a>
+					</li>
+					<li>
+						<a class="item-info-floor">
+							кв. <span class="flat-number"></span>, 1 комн. 32.3 кв. м., цена 23 тыс. $
+						</a>
+					</li>
+					<li>
+						<a class="item-info-floor">
+							кв. <span class="flat-number"></span>, 1 комн. 29.9 кв. м., цена 18 тыс. $
+						</a>
+					</li>
+					<li>
+						<a class="item-info-floor">
+							кв. <span class="flat-number"></span>, 2 комн. 75.2 кв. м., цена 60 тыс. $
+						</a>
+					</li>
+				</ul>
+                <p class="info-paragraph">
+                    Нажмите на схему квартиры или <br> ее описание, чтобы перейти к покупке
+                </p>
+				<p class="info-paragraph second-p">
+					Квартиры, отмеченные серым,<br> уже выкуплены
+				</p>
+			</div>
+			<svg class="close-but" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M2 2L26 26" stroke="#3596F5" stroke-width="3"></path>
+			<path d="M26 2L2 26" stroke="#3596F5" stroke-width="3"></path>
+		</svg>
+		</div>
+	</div>
+	<script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

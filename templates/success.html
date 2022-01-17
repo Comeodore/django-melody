@@ -1,0 +1,77 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ЖК Мелодия</title>
+	<link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'build/css/intlTelInput.css' %}">
+    <link rel="stylesheet" href="{% static 'build/css/demo.css' %}">
+    	<link rel="stylesheet" href="{% static 'css/success.css' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.ico' %}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa:400,500,700&amp;display=swap&amp;subset=cyrillic" rel="stylesheet" class="font-file">
+</head>
+<body>
+    <div class="background">
+         <div class="form-success animate__animated animate__fadeInDown">
+             <p class="text">Для завершения покупки заполните форму</p>
+             <form id="form" method="post">
+                 {% csrf_token %}
+                 <p class="name-field">Имя</p>
+                 {{ form.name }}
+                 <p class="name-field">Фамилия</p>
+                 {{ form.surname }}
+                 <p class="name-field">Email</p>
+                 {{ form.email }}
+                 <p class="name-field">Телефон</p>
+                 {{ form.phone }}
+                 <button type="submit" class="send-button" id="button" onclick='return isValidData();'>Отправить</button>
+             </form>
+         </div>
+    </div>
+<script src="{% static 'build/js/intlTelInput.js' %}"></script>
+  <script>
+    var input = document.querySelector("#phone");
+    var errorMap = ["Invalid", "Invalid country code", "Too short", "Too long", "Invalid"];
+    var iti = window.intlTelInput(input, {
+        allowDropdown: false,
+        initialCountry: "auto",
+        geoIpLookup: function(callback) {
+            $.get('https://ipinfo.io', function() {}, "jsonp").always(function(resp) {
+            var countryCode = (resp && resp.country) ? resp.country : "us";
+                callback(countryCode);
+            });
+        },
+        utilsScript: "{% static 'build/js/utils.js' %}",
+    });
+    function isValidData(){
+        var error = errorMap[iti.getValidationError()]
+        if (error!==undefined)
+        {
+            if (!form.checkValidity())
+            {
+                alert("Заполните все поля и проверьте правильность ввода")
+                return false
+            }
+            if (iti.isValidNumber()){
+                input.value = iti.getNumber()
+                alert('Спасибо за заполнение формы, на Вашу почту отправлено письмо о покупке квартиры')
+                return true
+            }
+            else {
+                alert('Phone number is '+error.toLowerCase());
+                return false
+            }
+        }
+        else {
+            alert('Phone number cannot be the text or missing')
+            return false
+        }
+     }
+  </script>
+</body>
+</html>
