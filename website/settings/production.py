@@ -32,9 +32,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 # SECURITY WARNING: keep the secret key used in settings secret!
 
 # SECURITY WARNING: don't run with debug turned on in settings!
-DEBUG = True
-ALLOWED_HOSTS = ['*']
-#ALLOWED_HOSTS = ['www.melody.pp.ua','melody.pp.ua']
+DEBUG = False
+ALLOWED_HOSTS = ['https://melodyjk.herokuapp.com/']
 CORSORIGINALLOWALL = True
 
 # Application definition
