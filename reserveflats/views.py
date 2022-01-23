@@ -10,7 +10,6 @@ import os
 from django.template.loader import render_to_string
 from django.core.mail import EmailMessage, send_mail
 from .forms import SuccessForm
-from website.settings.production import ACME_CHALLENGE_CONTENT
 
 HOST = os.environ.get('HOST')
 stripe.api_key = os.environ.get('API_KEY_STRIPE')
