@@ -33,7 +33,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 # SECURITY WARNING: don't run with debug turned on in settings!
 DEBUG = os.environ.get('DEBUG')
-ALLOWED_HOSTS = ['https://melodyjk.herokuapp.com/']
+ALLOWED_HOSTS = ['melodyjk.herokuapp.com']
 CORSORIGINALLOWALL = True
 
 # Application definition
