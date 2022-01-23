@@ -32,7 +32,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 # SECURITY WARNING: keep the secret key used in settings secret!
 
 # SECURITY WARNING: don't run with debug turned on in settings!
-DEBUG = False
+DEBUG = os.environ.get('DEBUG')
 ALLOWED_HOSTS = ['https://melodyjk.herokuapp.com/']
 CORSORIGINALLOWALL = True
 
