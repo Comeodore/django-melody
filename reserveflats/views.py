@@ -77,10 +77,6 @@ def success(request):
     return render(request, './success.html', context={'form': form})
 
 
-def acme_challenge(request):
-    return HttpResponse(ACME_CHALLENGE_CONTENT)
-
-
 def cancel(request):
     StripePayment.objects.all().delete()
     return redirect(HOST)
