@@ -1,5 +1,5 @@
-from django.shortcuts import render, redirect
-from .models import ReserveFlats,StripePayment
+from django.shortcuts import render, redirect, HttpResponse
+from .models import ReserveFlats, StripePayment
 from rest_framework import viewsets
 from .serializers import ReserveFlatsSerializer
 from django_filters.rest_framework import DjangoFilterBackend
@@ -10,9 +10,11 @@ import os
 from django.template.loader import render_to_string
 from django.core.mail import EmailMessage, send_mail
 from .forms import SuccessForm
+from website.settings.production import ACME_CHALLENGE_CONTENT
 
 HOST = os.environ.get('HOST')
 stripe.api_key = os.environ.get('API_KEY_STRIPE')
+
 
 def startpage(request):
     StripePayment.objects.all().delete()
@@ -59,11 +61,13 @@ def success(request):
                 phone_buyer = request.POST['phone']
                 form.save()
                 html_content = render_to_string('./mail.html', {'flat_number': flat_number})
-                email = EmailMessage('Buy flat #' + flat_number, html_content, 'Melody Limited Co. <admin@melody.pp.ua>', [email_buyer])
+                email = EmailMessage('Buy flat #' + flat_number, html_content,
+                                     'Melody Limited Co. <admin@melody.pp.ua>', [email_buyer])
                 email.content_subtype = 'html'
                 email.send()
                 emailadmin = EmailMessage(flat_str, name_buyer + " купил(a) квартиру №" + str(
-                    flat_number) + "\nНа сумму: " + price_flat + "$\nEmail: " + email_buyer + "\nPhone:" + phone_buyer, 'Melody Limited Co. <admin@melody.pp.ua>', ['admin@melody.pp.ua'])
+                    flat_number) + "\nНа сумму: " + price_flat + "$\nEmail: " + email_buyer + "\nPhone:" + phone_buyer,
+                                          'Melody Limited Co. <admin@melody.pp.ua>', ['admin@melody.pp.ua'])
                 emailadmin.send()
                 StripePayment.objects.all().delete()
                 return redirect(HOST)
@@ -71,6 +75,10 @@ def success(request):
         StripePayment.objects.all().delete()
         return redirect(HOST)
     return render(request, './success.html', context={'form': form})
+
+
+def acme_challenge(request):
+    return HttpResponse(ACME_CHALLENGE_CONTENT)
 
 
 def cancel(request):
