@@ -16,10 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
-from reserveflats import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('reserveflats.urls')),
-    path(r'^.well-known/acme-challenge/.*$', views.acme_challenge, name='acme-challenge'),
 ]
