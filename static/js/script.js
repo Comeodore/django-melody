@@ -3,7 +3,7 @@ floorpath = document.querySelectorAll(".default-path")
 floorpath[0].classList.add("path-hover")
 floordata = []
 
-HOST = 'https://stormy-river-85889.herokuapp.com/'
+HOST = 'https://melodyjk.herokuapp.com/'
 
 function Show(last_id,id)
 {
