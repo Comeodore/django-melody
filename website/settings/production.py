@@ -17,7 +17,6 @@ EMAIL_PORT = os.environ.get('MAIL_PORT')
 EMAIL_HOST_USER = os.environ.get('MAIL_USERNAME')
 EMAIL_HOST_PASSWORD = os.environ.get('MAIL_PASSWORD')
 EMAIL_USE_TLS = True
-ACME_CHALLENGE_CONTENT = os.environ['ACME_CHALLENGE_CONTENT']
 DB_NAME = os.environ.get('DB_NAME')
 DB_USER = os.environ.get('DB_USER')
 DB_PASSWORD = os.environ.get('DB_PASSWORD')
